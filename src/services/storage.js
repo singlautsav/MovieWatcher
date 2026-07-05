@@ -1,8 +1,16 @@
 export const saveUserData = (data) => {
-  localStorage.setItem('movieWatcherData', JSON.stringify(data));
+  try {
+    localStorage.setItem('movieWatcherData', JSON.stringify(data));
+  } catch (e) {
+    console.error("Local storage is disabled");
+  }
 };
 
 export const loadUserData = () => {
-  const data = localStorage.getItem('movieWatcherData');
-  return data ? JSON.parse(data) : { profiles: [] };
+  try {
+    const data = localStorage.getItem('movieWatcherData');
+    return data ? JSON.parse(data) : { profiles: [] };
+  } catch (e) {
+    return { profiles: [] };
+  }
 };

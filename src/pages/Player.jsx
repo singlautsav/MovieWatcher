@@ -74,7 +74,9 @@ const Player = () => {
                 // Keep them sorted by original priority
                 const sorted = available.filter(p => newArr.includes(p));
                 
-                const pref = localStorage.getItem('preferredServer');
+                let pref = null;
+                try { pref = localStorage.getItem('preferredServer'); } catch(e) {}
+                
                 if (pref) {
                   const prefIdx = sorted.findIndex(p => p.name === pref);
                   if (prefIdx !== -1) {
@@ -154,7 +156,9 @@ const Player = () => {
               const idx = Number(e.target.value);
               setProviderIndex(idx);
               if (workingProviders[idx]) {
-                localStorage.setItem('preferredServer', workingProviders[idx].name);
+                try {
+                  localStorage.setItem('preferredServer', workingProviders[idx].name);
+                } catch(err) {}
               }
             }}
             style={{ minWidth: '200px' }}
