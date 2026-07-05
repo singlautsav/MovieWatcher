@@ -21,6 +21,7 @@ export default async function handler(req, res) {
                       lowerHtml.includes('404 not found') ||
                       lowerHtml.includes('movie not found') ||
                       lowerHtml.includes('redirecting...') ||
+                      html.includes('"title":"$undefined"') ||
                       isBlank;
 
     // Vidsrc wrapper deep-check
