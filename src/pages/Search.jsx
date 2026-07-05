@@ -80,7 +80,7 @@ const Search = () => {
         <>
           <div className="grid-layout">
             {results.map((item) => (
-              <MovieCard key={`${item.media_type}-${item.id}`} movie={item} type={item.media_type} />
+              <MovieCard key={`${item.media_type}-${item.id}`} item={item} type={item.media_type} />
             ))}
           </div>
           {page < totalPages && (
