@@ -25,6 +25,19 @@ const Player = () => {
   const progress = getWatchedProgress(id);
 
   useEffect(() => {
+    // Debugging: Listen for any cross-origin messages from the iframe!
+    const handleMessage = (event) => {
+      // Some providers might send messages like { type: 'timeupdate', currentTime: 120 }
+      // We log them all to reverse-engineer their undocumented APIs.
+      if (event.data) {
+        console.log('IFRAME MESSAGE:', event.origin, event.data);
+      }
+    };
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
+  useEffect(() => {
     getDetails(type, id).then(data => {
       setDetails(data);
       if (type === 'tv' && progress) {

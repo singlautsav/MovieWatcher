@@ -7,6 +7,7 @@ import Player from './pages/Player';
 import LiveTV from './pages/LiveTV';
 import Profiles from './pages/Profiles';
 import Search from './pages/Search';
+import Grid from './pages/Grid';
 
 const AppContent = () => {
   const { activeProfile } = useUser();
@@ -20,8 +21,11 @@ const AppContent = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Home />} />
+        <Route path="/tv" element={<Home />} />
         <Route path="/explore/:type" element={<Explore />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/grid" element={<Grid />} />
         <Route path="/play/:type/:id" element={<Player />} />
         <Route path="/live" element={<LiveTV />} />
       </Routes>

@@ -23,7 +23,8 @@ const Navbar = () => {
       
       <div className={`nav-links ${menuOpen ? 'mobile-open' : ''}`}>
         <Link to="/" className={isActive('/')} onClick={() => setMenuOpen(false)}>Home</Link>
-        <Link to="/explore/movie" className={isActive('/explore/movie')} onClick={() => setMenuOpen(false)}>Explore</Link>
+        <Link to="/movies" className={isActive('/movies')} onClick={() => setMenuOpen(false)}>Movies</Link>
+        <Link to="/tv" className={isActive('/tv')} onClick={() => setMenuOpen(false)}>TV Shows</Link>
         <Link to="/live" className={isActive('/live')} onClick={() => setMenuOpen(false)}>Live TV</Link>
       </div>
 

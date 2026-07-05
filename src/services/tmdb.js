@@ -2,7 +2,7 @@ const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 const READ_ACCESS_TOKEN = import.meta.env.VITE_TMDB_READ_ACCESS_TOKEN;
 const BASE_URL = 'https://api.themoviedb.org/3';
 
-const fetchFromTMDB = async (endpoint, params = {}) => {
+export const fetchFromTMDB = async (endpoint, params = {}) => {
   const query = new URLSearchParams(params).toString();
   const url = `${BASE_URL}${endpoint}${query ? `?${query}` : ''}`;
   try {
@@ -38,9 +38,25 @@ export const getComedyMovies = () => fetchFromTMDB('/discover/movie', { with_gen
 export const getHorrorMovies = () => fetchFromTMDB('/discover/movie', { with_genres: 27 });
 export const getRomanceMovies = () => fetchFromTMDB('/discover/movie', { with_genres: 10749 });
 export const getDocumentaries = () => fetchFromTMDB('/discover/movie', { with_genres: 99 });
+export const getAnime = () => fetchFromTMDB('/discover/tv', { with_genres: 16, with_original_language: 'ja', sort_by: 'popularity.desc' });
+export const getKDramas = () => fetchFromTMDB('/discover/tv', { with_original_language: 'ko', sort_by: 'popularity.desc' });
+
 export const getNetworkContent = (networkId, type = 'tv') => fetchFromTMDB(`/discover/${type}`, { 
   with_networks: networkId, 
   sort_by: 'popularity.desc' 
 });
 
-export const getAnime = () => fetchFromTMDB('/discover/tv', { with_genres: 16, with_original_language: 'ja' });
+// Region Specific
+export const getBollywoodHits = () => fetchFromTMDB('/discover/movie', { with_original_language: 'hi', sort_by: 'popularity.desc' });
+export const getHollywoodBlockbusters = () => fetchFromTMDB('/discover/movie', { with_original_language: 'en', sort_by: 'popularity.desc' });
+
+// More Movie Genres
+export const getSciFiMovies = () => fetchFromTMDB('/discover/movie', { with_genres: 878 });
+export const getCrimeMovies = () => fetchFromTMDB('/discover/movie', { with_genres: 80 });
+export const getFamilyMovies = () => fetchFromTMDB('/discover/movie', { with_genres: 10751 });
+export const getAnimationMovies = () => fetchFromTMDB('/discover/movie', { with_genres: 16 });
+
+// More TV Genres
+export const getSciFiTV = () => fetchFromTMDB('/discover/tv', { with_genres: 10765 });
+export const getRealityTV = () => fetchFromTMDB('/discover/tv', { with_genres: 10764 });
+export const getCrimeTV = () => fetchFromTMDB('/discover/tv', { with_genres: 80 });

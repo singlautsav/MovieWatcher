@@ -34,10 +34,17 @@ export const UserProvider = ({ children }) => {
 
   const toggleWatchlist = (item) => {
     if (!activeProfile) return;
+    
+    // Normalize genre_ids for recommendation engine
+    const normalizedItem = { ...item };
+    if (!normalizedItem.genre_ids && normalizedItem.genres) {
+      normalizedItem.genre_ids = normalizedItem.genres.map(g => g.id);
+    }
+    
     const isSaved = activeProfile.watchlist.find(w => w.id === item.id);
     let newWatchlist = isSaved 
       ? activeProfile.watchlist.filter(w => w.id !== item.id)
-      : [...activeProfile.watchlist, item];
+      : [...activeProfile.watchlist, normalizedItem];
       
     const newProfiles = data.profiles.map(p => p.id === activeProfile.id ? { ...p, watchlist: newWatchlist } : p);
     saveAndSet({ ...data, profiles: newProfiles });
@@ -58,6 +65,7 @@ export const UserProvider = ({ children }) => {
         poster_path: details.poster_path,
         backdrop_path: details.backdrop_path,
         media_type: type,
+        genre_ids: details.genres ? details.genres.map(g => g.id) : [],
         vote_average: details.vote_average,
         season, 
         episode,
