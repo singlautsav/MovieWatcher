@@ -6,6 +6,7 @@ import Explore from './pages/Explore';
 import Player from './pages/Player';
 import LiveTV from './pages/LiveTV';
 import Profiles from './pages/Profiles';
+import Search from './pages/Search';
 
 const AppContent = () => {
   const { activeProfile } = useUser();
@@ -20,6 +21,7 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/explore/:type" element={<Explore />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/play/:type/:id" element={<Player />} />
         <Route path="/live" element={<LiveTV />} />
       </Routes>

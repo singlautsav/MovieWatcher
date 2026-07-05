@@ -4,11 +4,19 @@ export const STREAM_PROVIDERS = [
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
+      ? `https://streamsrcs.2embed.cc/vnest?tmdb=${tmdb}` 
+      : `https://streamsrcs.2embed.cc/xps-tv?tmdb=${tmdb}&s=${s}&e=${e}` 
+  },
+  { 
+    name: 'Server 2', 
+    reqImdb: false, 
+    isWrapper: false,
+    getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
       ? `https://vidfast.pro/movie/${tmdb}?autoPlay=true&theme=e50914&title=false&hideServer=false` 
       : `https://vidfast.pro/tv/${tmdb}/${s}/${e}?autoPlay=true&theme=e50914&nextButton=true&autoNext=true&title=false` 
   },
   { 
-    name: 'Server 2', 
+    name: 'Server 3', 
     reqImdb: false, 
     isWrapper: true,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -16,7 +24,7 @@ export const STREAM_PROVIDERS = [
       : `https://vidsrc.to/embed/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 3', 
+    name: 'Server 4', 
     reqImdb: true, 
     isWrapper: true,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -24,7 +32,7 @@ export const STREAM_PROVIDERS = [
       : `https://vidsrc.me/embed/${imdb}/${s}-${e}/` 
   },
   { 
-    name: 'Server 4', 
+    name: 'Server 5', 
     reqImdb: false, 
     isWrapper: true,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -32,7 +40,7 @@ export const STREAM_PROVIDERS = [
       : `https://vidsrc.pm/embed/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 5', 
+    name: 'Server 6', 
     reqImdb: false, 
     isWrapper: true,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -40,7 +48,7 @@ export const STREAM_PROVIDERS = [
       : `https://vidsrc.cc/v2/embed/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 6', 
+    name: 'Server 7', 
     reqImdb: false, 
     isWrapper: true,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -48,7 +56,7 @@ export const STREAM_PROVIDERS = [
       : `https://vidsrc.icu/embed/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 7', 
+    name: 'Server 8', 
     reqImdb: false, 
     isWrapper: true,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -56,39 +64,16 @@ export const STREAM_PROVIDERS = [
       : `https://vidsrc.rip/embed/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 8', 
+    name: 'Server 9', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
       ? `https://vidlink.pro/movie/${tmdb}` 
       : `https://vidlink.pro/tv/${tmdb}/${s}/${e}` 
   },
-  { 
-    name: 'Server 9', 
-    reqImdb: false, 
-    isWrapper: false,
-    getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
-      ? `https://streamsrcs.2embed.cc/vnest?tmdb=${tmdb}` 
-      : `https://streamsrcs.2embed.cc/xps-tv?tmdb=${tmdb}&s=${s}&e=${e}` 
-  },
+
   { 
     name: 'Server 10', 
-    reqImdb: false, 
-    isWrapper: false,
-    getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
-      ? `https://streamsrcs.2embed.cc/vnest?tmdb=${tmdb}` 
-      : `https://streamsrcs.2embed.cc/xps-tv?tmdb=${tmdb}&s=${s}&e=${e}` 
-  },
-  { 
-    name: 'Server 11', 
-    reqImdb: false, 
-    isWrapper: false,
-    getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
-      ? `https://streamsrcs.2embed.cc/vnest?tmdb=${tmdb}` 
-      : `https://streamsrcs.2embed.cc/xps-tv?tmdb=${tmdb}&s=${s}&e=${e}` 
-  },
-  { 
-    name: 'Server 12', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -96,7 +81,7 @@ export const STREAM_PROVIDERS = [
       : `https://autoembed.co/tv/tmdb/${tmdb}-${s}-${e}` 
   },
   { 
-    name: 'Server 13', 
+    name: 'Server 11', 
     reqImdb: false, 
     isWrapper: true,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -104,7 +89,7 @@ export const STREAM_PROVIDERS = [
       : `https://embed.su/embed/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 14', 
+    name: 'Server 12', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -112,7 +97,7 @@ export const STREAM_PROVIDERS = [
       : `https://multiembed.mov/?video_id=${tmdb}&tmdb=1&s=${s}&e=${e}` 
   },
   { 
-    name: 'Server 15', 
+    name: 'Server 13', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -120,7 +105,7 @@ export const STREAM_PROVIDERS = [
       : `https://moviesapi.to/tv/${tmdb}-${s}-${e}` 
   },
   { 
-    name: 'Server 16', 
+    name: 'Server 14', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -128,7 +113,7 @@ export const STREAM_PROVIDERS = [
       : `https://moviesapi.club/tv/${tmdb}-${s}-${e}` 
   },
   { 
-    name: 'Server 17', 
+    name: 'Server 15', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -136,7 +121,7 @@ export const STREAM_PROVIDERS = [
       : `https://player.smashy.stream/tv/${tmdb}?s=${s}&e=${e}` 
   },
   { 
-    name: 'Server 18', 
+    name: 'Server 16', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -144,7 +129,7 @@ export const STREAM_PROVIDERS = [
       : `https://nontongo.win/embed/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 19', 
+    name: 'Server 17', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -152,7 +137,7 @@ export const STREAM_PROVIDERS = [
       : `https://vidcore.org/embed/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 20', 
+    name: 'Server 18', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -160,7 +145,7 @@ export const STREAM_PROVIDERS = [
       : `https://databasegdriveplayer.co/player.php?type=series&tmdb=${tmdb}&season=${s}&episode=${e}` 
   },
   { 
-    name: 'Server 21', 
+    name: 'Server 19', 
     reqImdb: true, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -168,7 +153,7 @@ export const STREAM_PROVIDERS = [
       : `https://2embed.ru/embed/imdb/series?id=${imdb}&season=${s}&episode=${e}` 
   },
   { 
-    name: 'Server 22', 
+    name: 'Server 20', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -176,7 +161,7 @@ export const STREAM_PROVIDERS = [
       : `https://vidsync.xyz/embed/tv/${tmdb}/${s}/${e}?autoPlay=false&theme=e50914` 
   },
   { 
-    name: 'Server 23', 
+    name: 'Server 21', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -184,7 +169,7 @@ export const STREAM_PROVIDERS = [
       : `https://www.vidking.net/embed/tv/${tmdb}/${s}/${e}?autoPlay=false` 
   },
   { 
-    name: 'Server 24', 
+    name: 'Server 22', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -192,7 +177,7 @@ export const STREAM_PROVIDERS = [
       : `https://111movies.net/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 25', 
+    name: 'Server 23', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -200,7 +185,7 @@ export const STREAM_PROVIDERS = [
       : `https://airflix1.com/embed/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 26', 
+    name: 'Server 24', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -208,7 +193,7 @@ export const STREAM_PROVIDERS = [
       : `https://hexa.su/watch/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 27', 
+    name: 'Server 25', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -216,7 +201,7 @@ export const STREAM_PROVIDERS = [
       : `https://mappletv.uk/watch/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 28', 
+    name: 'Server 26', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -224,7 +209,7 @@ export const STREAM_PROVIDERS = [
       : `https://peachify.top/embed/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 29', 
+    name: 'Server 27', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -232,7 +217,7 @@ export const STREAM_PROVIDERS = [
       : `https://player.videasy.net/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 30', 
+    name: 'Server 28', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -240,7 +225,7 @@ export const STREAM_PROVIDERS = [
       : `https://player.vidzee.wtf/embed/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 31', 
+    name: 'Server 29', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -248,7 +233,7 @@ export const STREAM_PROVIDERS = [
       : `https://rivestream.org/embed?type=tv&id=${tmdb}&season=${s}&episode=${e}` 
   },
   { 
-    name: 'Server 32', 
+    name: 'Server 30', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -256,7 +241,7 @@ export const STREAM_PROVIDERS = [
       : `https://vidlux.xyz/embed/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 33', 
+    name: 'Server 31', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -264,7 +249,7 @@ export const STREAM_PROVIDERS = [
       : `https://vidora.su/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 34', 
+    name: 'Server 32', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -272,7 +257,7 @@ export const STREAM_PROVIDERS = [
       : `https://vidrock.ru/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 35', 
+    name: 'Server 33', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -280,7 +265,7 @@ export const STREAM_PROVIDERS = [
       : `https://www.fmovies.gd/watch/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 36', 
+    name: 'Server 34', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 
@@ -288,7 +273,7 @@ export const STREAM_PROVIDERS = [
       : `https://cinemaos.tech/player/tv/${tmdb}/${s}/${e}` 
   },
   { 
-    name: 'Server 37', 
+    name: 'Server 35', 
     reqImdb: false, 
     isWrapper: false,
     getUrl: (type, tmdb, imdb, s, e) => type === 'movie' 

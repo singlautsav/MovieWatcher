@@ -187,39 +187,7 @@ const Player = () => {
         )}
       </div>
       
-      {(() => {
-        const getOfficialProviders = () => {
-          if (!details?.['watch/providers']?.results) return [];
-          const results = details['watch/providers'].results;
-          const targetRegions = ['IN', 'US', 'GB', 'DE', 'FR', 'CA', 'AU'];
-          const providersMap = new Map();
-          
-          targetRegions.forEach(region => {
-            if (results[region] && results[region].flatrate) {
-              results[region].flatrate.forEach(p => {
-                if (!providersMap.has(p.provider_id)) {
-                  providersMap.set(p.provider_id, p);
-                }
-              });
-            }
-          });
-          return Array.from(providersMap.values());
-        };
-        const officialProviders = getOfficialProviders();
 
-        if (officialProviders.length === 0) return null;
-        
-        return (
-          <div className="official-providers glass-panel" style={{ padding: '1.5rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <h3 style={{ margin: 0, color: 'var(--text-muted)' }}>Watch Officially (IN/US/EU):</h3>
-            {officialProviders.map(p => (
-              <div key={p.provider_id} title={p.provider_name} style={{ width: '40px', height: '40px', borderRadius: '0.5rem', overflow: 'hidden' }}>
-                <img src={`https://image.tmdb.org/t/p/w200${p.logo_path}`} alt={p.provider_name} style={{ width: '100%', height: '100%' }} />
-              </div>
-            ))}
-          </div>
-        );
-      })()}
 
       {type === 'tv' && (
         <div className="tv-controls glass-panel">

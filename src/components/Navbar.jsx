@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Search } from 'lucide-react';
 
 const Navbar = () => {
   const location = useLocation();
@@ -27,9 +27,14 @@ const Navbar = () => {
         <Link to="/live" className={isActive('/live')} onClick={() => setMenuOpen(false)}>Live TV</Link>
       </div>
 
-      <button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? <X size={28} color="white" /> : <Menu size={28} color="white" />}
-      </button>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+        <Link to="/search" style={{ display: 'flex', alignItems: 'center' }}>
+          <Search size={24} color="white" />
+        </Link>
+        <button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <X size={28} color="white" /> : <Menu size={28} color="white" />}
+        </button>
+      </div>
     </nav>
   );
 };
